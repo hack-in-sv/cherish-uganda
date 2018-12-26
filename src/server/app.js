@@ -1,19 +1,27 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var sassMiddleware = require('node-sass-middleware');
+require('dotenv').config()
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const nunjucks = require('nunjucks')
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const sassMiddleware = require('node-sass-middleware');
 
-var app = express();
+const index = require('./routes/index');
+const users = require('./routes/users');
+
+const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+nunjucks.configure('views', {
+  autoescape: true,
+  express: app
+});
+
+// app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'njk');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

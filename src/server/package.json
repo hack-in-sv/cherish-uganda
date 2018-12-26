@@ -1,0 +1,30 @@
+{
+  "name": "cherish-uganda-core",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "morgan": "~1.9.0",
+    "node-sass-middleware": "0.9.8",
+    "nunjucks": "^3.1.6",
+    "passport": "^0.4.0",
+    "pg": "^7.6.0",
+    "sequelize": "^4.41.0",
+    "serve-favicon": "~2.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.5"
+  },
+  "nodemonConfig": {
+    "ignore": ["test/*", "docs/*"],
+    "ext": "js,json,njk"
+  }
+}
