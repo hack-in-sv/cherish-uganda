@@ -12,6 +12,8 @@ const sassMiddleware = require('node-sass-middleware');
 const index = require('./routes/index');
 const users = require('./routes/users');
 
+const authRoutes = require('./modules/auth/routes');
+
 const app = express();
 
 // view engine setup
@@ -23,6 +25,7 @@ nunjucks.configure('views', {
 // app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'njk');
 
+console.log(path.join(__dirname, 'public'));
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -32,13 +35,14 @@ app.use(cookieParser());
 app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
-  indentedSyntax: true, // true = .sass and false = .scss
+  indentedSyntax: false, // true = .sass and false = .scss
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/auth', authRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

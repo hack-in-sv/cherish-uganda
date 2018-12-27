@@ -1,0 +1,55 @@
+@import 'normalize.css';
+
+$basePageWith: 960px;
+
+body {
+   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+   color: #00B7FF;
+}
+
+.container {
+   width: $basePageWith;
+   margin: 0 auto;
+   box-sizing: border-box;
+}
+
+header {
+   // background-color: lightblue;
+   padding: 25px;
+
+   .container {
+      display: flex;
+      // justify-content: space-between;
+   }
+
+   nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      flex-grow: 1;
+
+      .loginlinks {
+         height: 3em;
+         display: block;
+         border-bottom:1px solid lightgray;
+         margin-bottom: 1em;
+
+         span {
+            padding-left: 1em;
+         }
+      }
+
+      .userlinks {
+         display: none;
+      }
+
+      .mainnav {
+         span {
+            padding-left: 1em;
+         }
+      }
+   }
+}
