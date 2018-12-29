@@ -16,6 +16,7 @@
     "node-sass-middleware": "0.9.8",
     "nunjucks": "^3.1.6",
     "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
     "pg": "^7.6.0",
     "sequelize": "^4.41.0",
     "serve-favicon": "~2.4.5"
@@ -24,7 +25,10 @@
     "nodemon": "^1.18.5"
   },
   "nodemonConfig": {
-    "ignore": ["test/*", "docs/*"],
+    "ignore": [
+      "test/*",
+      "docs/*"
+    ],
     "ext": "js,json,njk"
   }
 }

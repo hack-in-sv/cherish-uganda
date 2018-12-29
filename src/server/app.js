@@ -1,4 +1,4 @@
-require('dotenv').config()
+const result = require('dotenv').config()
 
 const express = require('express');
 const path = require('path');
@@ -8,6 +8,10 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const sassMiddleware = require('node-sass-middleware');
+
+// run config files
+const passportConfig = require('./config/passport');
+passportConfig.config();
 
 const index = require('./routes/index');
 const users = require('./routes/users');
@@ -54,6 +58,7 @@ app.use(function(req, res, next) {
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
+  console.log(err);
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
