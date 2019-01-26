@@ -1,3 +1,5 @@
+const Sequelize = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   var User = sequelize.define('User', {
     userId: DataTypes.INTEGER,

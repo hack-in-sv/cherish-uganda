@@ -36,14 +36,4 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 db.modules = {};
 
-db.importFromModule = (moduleName) => {
-  if (typeof db.modules[moduleName] != 'undefined') {
-    throw new Error('Module already loaded');
-  }
-
-  // TODO 
-  modelsPath = path.join(__dirname, '../modules', moduleName, 'models');
-  db.modules[moduleName] = loadModels(modelsPath)
-};
-
 module.exports = db;
