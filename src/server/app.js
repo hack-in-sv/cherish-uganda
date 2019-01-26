@@ -11,7 +11,9 @@ const sassMiddleware = require('node-sass-middleware');
 
 // run config files
 const passportConfig = require('./config/passport');
+const databaseConfig = require('./config/database');
 passportConfig.config();
+databaseConfig.config();   // NOTE that this is synchronous with a very long delay prior to failure
 
 const index = require('./routes/index');
 const users = require('./routes/users');
@@ -50,7 +52,7 @@ app.use('/auth', authRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
