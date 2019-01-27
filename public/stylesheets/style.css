@@ -5,6 +5,9 @@ body {
 a {
   color: #00B7FF; }
 
+#logo img {
+  max-width: 200px; }
+
 .container {
   width: 960px;
   margin: 0 auto;
