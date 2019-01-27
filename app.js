@@ -13,7 +13,7 @@ const sassMiddleware = require('node-sass-middleware');
 const passportConfig = require('./config/passport');
 const databaseConfig = require('./config/database');
 passportConfig.config();
-// databaseConfig.config();
+databaseConfig.config();
 
 const index = require('./routes/index');
 const users = require('./routes/users');
