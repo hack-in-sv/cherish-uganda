@@ -12,8 +12,8 @@ const sassMiddleware = require('node-sass-middleware');
 // run config files
 const passportConfig = require('./config/passport');
 const databaseConfig = require('./config/database');
-passportConfig.config();
-databaseConfig.config();
+// passportConfig.config();
+// databaseConfig.config();
 
 const index = require('./routes/index');
 const users = require('./routes/users');
